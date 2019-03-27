@@ -2,3 +2,16 @@
 
 Rainchasers Polymer PWA 
 =======================
+
+To get started:
+
+    npm install
+    npm start
+
+Building
+========
+
+    npm run-script build
+    npm run-script serve
+
+With `serve` serving the production build (remember service workers will kick in).
