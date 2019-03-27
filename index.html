@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rainchasers</title>
+    <meta name="generator" content="PWA Starter Kit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Whitewater kayaking and canoeing guides for the UK">
+
+    <base href="/">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/manifest/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/manifest/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/manifest/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/images/manifest/safari-pinned-tab.svg" color="#3f51b5">
+    <meta name="theme-color" content="#3F51B5">
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Rainchasers">
+
+    <!-- Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Rainchasers">
+
+    <!-- hint to the browser to start the handshake for the fonts site -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <script>
+      // Load and register pre-caching Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service-worker.js', {
+            scope: '/',
+          });
+        });
+      }
+
+      // Redux assumes `process.env.NODE_ENV` exists in the ES module build.
+      // https://github.com/reactjs/redux/issues/2907
+      window.process = { env: { NODE_ENV: 'production' } };
+    </script>
+
+    <style>
+      @font-face {
+        font-family: 'Pacifico';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/Q_Z9mv4hySLTMoMjnk_rCXYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');
+        /* The browser draws the text immediately in the fallback font if the font
+           isn't loaded, then swaps it with the webfont when it eventually loads
+           See: https://developers.google.com/web/updates/2016/02/font-display
+        */
+        font-display: swap;
+      }
+      body {
+        margin: 0;
+        /* This is a font-stack that tries to use the system-default sans-serifs first */
+        font-family: Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        line-height: 1.5;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
+  </head>
+  <body>
+    <my-app appTitle="Rainchasers"></my-app>
+    <noscript>
+      Please enable JavaScript to view this website.
+    </noscript>
+
+    <!-- load polyfills then bootstrap app -->
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script type="module" src="src/components/my-app.js"></script>
+  </body>
+</html>
